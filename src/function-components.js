@@ -1,3 +1,7 @@
+//Library imports
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faSave, faTrash } from '@fortawesome/free-solid-svg-icons';
+
 // <Intro /> rendered in <Page />
 function Intro(props) {
 	return (
@@ -11,7 +15,7 @@ function Intro(props) {
 					placeholder='Start by entering a card name!'
 				/>
 				<button onClick={props.onClick}>
-					<i className='fas fa-search'></i>
+					<FontAwesomeIcon icon={faSearch} />
 				</button>
 			</div>
 		</div>
@@ -34,7 +38,7 @@ function Preview(props) {
 						className={props.PageState != 0 ? 'display-none' : ''}
 					/>
 					<button onClick={props.PageState != 0 ? props.onDelete : props.onSave}>
-						<i className={props.PageState != 0 ? 'fas fa-trash' : 'fas fa-save'}></i>
+						<FontAwesomeIcon icon={props.PageState != 0 ? faTrash : faSave} />
 					</button>
 				</div>
 				{props.PhysicalPreviewArray}
@@ -69,7 +73,7 @@ function Search(props) {
 				placeholder='Enter a card name!'
 			/>
 			<button onClick={props.onClick}>
-				<i className='fas fa-search'></i>
+				<FontAwesomeIcon icon={faSearch} />
 			</button>
 		</div>
 	);
